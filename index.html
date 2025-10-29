@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - DETERZIN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #111;
+      color: #fff;
+    }
+    header {
+      padding: 40px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #f00;
+    }
+    .hero {
+      padding: 100px 8%;
+    }
+    .hero h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero p {
+      max-width: 500px;
+      margin-top: 20px;
+      opacity: .7;
+    }
+    .btn {
+      margin-top: 30px;
+      background: #f00;
+      padding: 12px 28px;
+      border-radius: 6px;
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+    .btn:hover {
+      background: #d00;
+    }
+    .section {
+      padding: 80px 8%;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #181818;
+      padding: 30px;
+      border-radius: 8px;
+      transition: .3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      background: #202020;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>DETERZIN</h2>
+  <nav>
+    <a href="#services">Serviços</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Construo Presença Digital<br>com Estratégia e Criatividade</h1>
+  <p>Sou Social Media e desenvolvedor, criando landing pages, conteúdo estratégico e posicionamento digital focado em resultados.</p>
+  <a href="https://wa.me/258855002264" target="_blank" class="btn">Fale Comigo</a>
+</section>
+
+<section class="section" id="services">
+  <h2>Serviços</h2><br>
+  <div class="services">
+    <div class="card">Gestão de Redes Sociais</div>
+    <div class="card">Landing Pages</div>
+    <div class="card">Design e Branding</div>
+    <div class="card">Copywriting Estratégico</div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <h2>Portfolio</h2><br>
+  <p>Em breve — projetos selecionados, campanhas e páginas desenvolvidas.</p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contacto</h2><br>
+  <p>Email: eliasrmagaia@gmail.com</p>
+  <p>WhatsApp: +258 855002264</p>
+</section>
+
+<footer>
+  © 2025 — Desenvolvido por DETERZIN
+</footer>
+
+<script>
+  console.log('Portfolio landing page carregada com sucesso!');
+</script>
+
+</body>
+</html>
