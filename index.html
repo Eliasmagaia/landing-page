@@ -2,8 +2,21 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Portfolio de DETERZIN - Social Media, Landing Pages, Design e Branding. Desenvolvimento e estratégia digital focado em resultados." />
+<meta name="keywords" content="social media, landing page, design, branding, desenvolvimento web, copywriting" />
+<meta name="author" content="DETERZIN" />
+<meta property="og:title" content="Portfolio - DETERZIN" />
+<meta property="og:description" content="Social Media e desenvolvedor, criando landing pages, conteúdo estratégico e posicionamento digital." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/dtzsemfundo.png" />
+<meta property="og:url" content="https://eliasmagaia.github.io/landing-page/" />
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#f00" />
+<link rel="apple-touch-icon" href="assets/dtzsemfundo.png">
 <link rel="stylesheet" href="styles/main.css">
 <link rel="icon" type="image/png" href="assets/dtzsemfundo.png">
+<title>Portfolio - DETERZIN</title>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYNKB86EY7"></script>
 <script>
@@ -12,11 +25,10 @@
   gtag('js', new Date());
   gtag('config', 'G-YYNKB86EY7');
 </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - DETERZIN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -32,7 +44,7 @@
 <section class="hero">
   <h1>Construo Presença Digital<br>com Estratégia e Criatividade</h1>
   <p>Sou Social Media e desenvolvedor, criando landing pages, conteúdo estratégico e posicionamento digital focado em resultados.</p>
-  <a href="https://wa.me/258855002264" target="_blank" class="btn">Fale Comigo</a>
+  <a href="https://wa.me/258855002264" target="_blank" rel="noopener noreferrer" class="btn">Fale Comigo</a>
 </section>
 
 <section class="section" id="services">
@@ -45,23 +57,110 @@
   </div>
 </section>
 
+
 <section class="section" id="portfolio">
   <h2>Portfolio</h2><br>
-  <p>Em breve — projetos selecionados, campanhas e páginas desenvolvidas.</p>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" onclick="openModal('assets/imagens/landing page.png','Landing Page Cliente','Criação de landing page com design estratégico e otimização de conversão.')">
+        <img src="assets/imagens/landing page.png" alt="Projeto Landing Page">
+        <h3>Landing Page</h3>
+        <p>Criação de landing page com design estratégico e otimização de conversão.</p>
+      </div>
+      <div class="swiper-slide" onclick="openModal('assets/imagens/metricas.jpg','Campanha Redes Sociais','Campanha completa de engajamento e aumento de seguidores em 30 dias.')">
+        <img src="assets/imagens/metricas.jpg" alt="Métricas Instagram">
+        <h3>Campanha Redes Sociais</h3>
+        <p>Campanha completa de engajamento e aumento de seguidores em 30 dias.</p>
+      </div>
+      <div class="swiper-slide" onclick="openModal('assets/imagens/dtzviews600x400.png','Branding e Identidade Visual','Desenvolvimento de identidade visual e branding completo para marca.')">
+        <img src="assets/imagens/dtzviews600x400.png" alt="Logo DTZViews">
+        <h3>Branding e Identidade Visual</h3>
+        <p>Desenvolvimento de identidade visual e branding completo para marca.</p>
+      </div>
+</div>
+<!-- Botões de navegação -->
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<!-- Paginação -->
+<div class="swiper-pagination"></div>
+</div>
 </section>
+
+<!-- Modal -->
+<div id="portfolioModal" class="modal">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="Projeto">
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
 
 <section class="section" id="contact">
   <h2>Contacto</h2><br>
-  <p>Email: eliasrmagaia@gmail.com</p>
-  <p>WhatsApp: +258 855002264</p>
+  <p><a href="mailto:eliasrmagaia@gmail.com" class="contact-link">📧 Email: eliasrmagaia@gmail.com</a></p>
+  <p><a href="https://wa.me/258855002264" target="_blank" rel="noopener noreferrer" class="contact-link">💬 WhatsApp: +258 855 002 264</a></p>
 </section>
 
 <footer>
   © 2025 — Desenvolvido por DETERZIN
 </footer>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-  console.log('Portfolio landing page carregada com sucesso!');
+// Registrar Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(reg => console.log('Service Worker registrado:', reg))
+    .catch(err => console.log('Erro ao registrar Service Worker:', err));
+}
+
+const swiper = new Swiper('.swiper', {
+loop: true,
+navigation: {
+nextEl: '.swiper-button-next',
+prevEl: '.swiper-button-prev',
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+slidesPerView: 1,
+spaceBetween: 30,
+breakpoints: {
+640: { slidesPerView: 1 },
+768: { slidesPerView: 2 },
+1024: { slidesPerView: 3 }
+}
+});
+
+// Modal functionality
+  const modal = document.getElementById('portfolioModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+
+  function openModal(img, title, desc) {
+    modal.style.display = 'flex';
+    modalImg.src = img;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalTitle.textContent = '';
+    modalDesc.textContent = '';
+  }
+
+  // Close modal when clicking outside content
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+console.log('Portfolio landing page carregada com sucesso!');
 </script>
 
 </body>

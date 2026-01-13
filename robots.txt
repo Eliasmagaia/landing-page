@@ -1,0 +1,12 @@
+# Robots.txt - Otimização para Search Engines
+User-agent: *
+Allow: /landing-page/
+Disallow: /landing-page/.git/
+Disallow: /landing-page/node_modules/
+Disallow: /landing-page/.env
+
+# Informar tempo de crawl
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://eliasmagaia.github.io/landing-page/sitemap.xml
