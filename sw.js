@@ -1,13 +1,15 @@
 // Service Worker para Cache e Performance
 const CACHE_NAME = 'deterzin-v1';
+const BASE_PATH = '/landing-page';
+
 const urlsToCache = [
-  '/landing-page/',
-  '/landing-page/index.html',
-  '/landing-page/styles/main.css',
-  '/landing-page/assets/dtzsemfundo.png',
-  '/landing-page/assets/imagens/landing page.png',
-  '/landing-page/assets/imagens/metricas.jpg',
-  '/landing-page/assets/imagens/dtzviews600x400.png'
+  BASE_PATH + '/',
+  BASE_PATH + '/index.html',
+  BASE_PATH + '/styles/main.css',
+  BASE_PATH + '/assets/dtzsemfundo.png',
+  BASE_PATH + '/assets/imagens/landing-page.png',
+  BASE_PATH + '/assets/imagens/metricas.jpg',
+  BASE_PATH + '/assets/imagens/dtzviews600x400.png'
 ];
 
 // Instalar o Service Worker

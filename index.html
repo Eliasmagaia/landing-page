@@ -62,8 +62,8 @@
   <h2>Portfolio</h2><br>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" onclick="openModal('assets/imagens/landing page.png','Landing Page Cliente','Criação de landing page com design estratégico e otimização de conversão.')">
-        <img src="assets/imagens/landing page.png" alt="Projeto Landing Page">
+      <div class="swiper-slide" onclick="openModal('assets/imagens/landing-page.png','Landing Page Cliente','Criação de landing page com design estratégico e otimização de conversão.')">
+        <img src="assets/imagens/landing-page.png" alt="Projeto Landing Page">
         <h3>Landing Page</h3>
         <p>Criação de landing page com design estratégico e otimização de conversão.</p>
       </div>
@@ -108,11 +108,18 @@
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-// Registrar Service Worker
+// Registrar Service Worker com caminho correto para GitHub Pages
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
-    .then(reg => console.log('Service Worker registrado:', reg))
-    .catch(err => console.log('Erro ao registrar Service Worker:', err));
+  // Detectar se está em subdiretório
+  const basePath = window.location.pathname.includes('/landing-page/') ? '/landing-page/sw.js' : '/sw.js';
+  
+  navigator.serviceWorker.register(basePath)
+    .then(reg => {
+      console.log('✓ Service Worker registrado com sucesso:', reg);
+    })
+    .catch(err => {
+      console.warn('⚠ Service Worker não disponível:', err.message);
+    });
 }
 
 const swiper = new Swiper('.swiper', {

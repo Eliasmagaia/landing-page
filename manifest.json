@@ -2,20 +2,21 @@
   "name": "DETERZIN - Portfolio",
   "short_name": "DETERZIN",
   "description": "Social Media e desenvolvedor, criando landing pages, conteúdo estratégico e posicionamento digital.",
-  "start_url": "/landing-page/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#111",
   "theme_color": "#f00",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "assets/dtzsemfundo.png",
+      "src": "./assets/dtzsemfundo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/dtzsemfundo.png",
+      "src": "./assets/dtzsemfundo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -23,7 +24,7 @@
   ],
   "screenshots": [
     {
-      "src": "assets/imagens/landing page.png",
+      "src": "./assets/imagens/landing-page.png",
       "type": "image/png",
       "sizes": "540x720",
       "purpose": "any"

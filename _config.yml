@@ -1,17 +1,16 @@
-theme: null
-plugins:
-  - jekyll-gist
-  - jekyll-github-metadata
+# GitHub Pages - Jekyll Configuration
+# Desabilitar Jekyll para servir arquivos estáticos
+# Quando usar o Jekyll normalmente, comentar a linha abaixo
 
-# Configurações de performance
+# title: DETERZIN - Portfolio
+# description: Social Media e desenvolvedor, criando landing pages, conteúdo estratégico e posicionamento digital.
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
+theme: null
 
-# Cache busting - adicionar hash aos assets em produção
-sass:
-  style: compressed
-
-# Headers de segurança
+# Excluir arquivos do processamento
 exclude:
   - .git/
   - .gitignore
@@ -19,3 +18,17 @@ exclude:
   - .env
   - .DS_Store
   - Thumbs.db
+  - README.md
+  - LICENSE
+
+# Configurar o baseurl para GitHub Pages
+baseurl: "/landing-page"
+
+# URL do site
+url: "https://eliasmagaia.github.io"
+
+# Usar SCSS compilado
+sass:
+  style: compressed
+  load_paths:
+    - _sass
